@@ -1,0 +1,377 @@
+/* INDEX PAGE SPECIFIC STYLES */
+
+/* Hero section - main banner area */
+.hero {
+    position: relative; /* For absolute positioning of background elements */
+    min-height: 70vh; /* Take up most of viewport height */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center; /* Center align text */
+    overflow: hidden; /* Hide overflow for background effects */
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-gray) 50%, var(--secondary-gray) 100%); /* Complex gradient background */
+}
+
+/* Hero background decorative element */
+.hero-bg {
+    position: absolute; /* Position absolutely within hero */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    right: 0; /* Align to right */
+    bottom: 0; /* Align to bottom */
+    background: radial-gradient(circle at 30% 70%, rgba(220, 53, 69, 0.1) 0%, transparent 50%); /* Subtle red radial gradient */
+    z-index: 1; /* Behind content but above hero background */
+}
+
+/* Hero content container */
+.hero-content {
+    position: relative; /* Position relative to appear above background */
+    z-index: 4; /* Above background elements */
+    max-width: 800px; /* Limit width for readability */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+/* Main hero title */
+.hero-title {
+    font-family: var(--font-heading); /* Use heading font */
+    font-size: 4rem; /* Large font size */
+    color: var(--silver); /* Silver color */
+    margin-bottom: 1rem; /* Space below title */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Strong text shadow */
+    letter-spacing: 3px; /* Wide letter spacing */
+    text-transform: uppercase; /* Make uppercase */
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+    font-size: 1.3rem; /* Medium font size */
+    color: var(--text-secondary); /* Light gray color */
+    margin-bottom: 2.5rem; /* Space below subtitle */
+    font-weight: 400; /* Normal font weight */
+    line-height: 1.5; /* Comfortable line height */
+}
+
+/* Hero buttons container */
+.hero-buttons {
+    display: flex; /* Use flexbox */
+    gap: 20px; /* Space between buttons */
+    justify-content: center; /* Center buttons */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Features section */
+.features {
+    padding: 80px 0; /* Large vertical padding */
+    background-color: var(--primary-gray); /* Dark gray background */
+}
+
+/* Features grid container */
+.features-grid {
+    display: grid; /* Use CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+    gap: 30px; /* Space between grid items */
+    margin-top: 2rem; /* Space above grid */
+}
+
+/* Individual feature card */
+.feature-card {
+    background: linear-gradient(135deg, var(--secondary-gray) 0%, var(--primary-gray) 100%); /* Gradient background */
+    padding: 30px; /* Internal padding */
+    border-radius: var(--border-radius); /* Rounded corners */
+    text-align: center; /* Center align content */
+    transition: var(--transition); /* Smooth transition */
+    border: 1px solid var(--light-gray); /* Subtle border */
+    position: relative; /* For pseudo-element effects */
+    overflow: hidden; /* Hide overflow for effects */
+}
+
+/* Feature card hover effect */
+.feature-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    border-color: var(--accent-red); /* Red border on hover */
+}
+
+/* Feature card hover background effect */
+.feature-card:hover::before {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute; /* Position absolutely */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    right: 0; /* Align to right */
+    bottom: 0; /* Align to bottom */
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.05) 0%, transparent 100%); /* Subtle red overlay */
+    z-index: 1; /* Behind content */
+}
+
+/* Feature card content positioning */
+.feature-card > * {
+    position: relative; /* Position relative to appear above pseudo-element */
+    z-index: 2; /* Above background effects */
+}
+
+/* Feature icon styling */
+.feature-icon {
+    font-size: 3rem; /* Large icon size */
+    margin-bottom: 1rem; /* Space below icon */
+    display: block; /* Block display */
+}
+
+/* Feature card title */
+.feature-card h4 {
+    font-family: var(--font-heading); /* Use heading font */
+    font-size: 1.5rem; /* Medium font size */
+    color: var(--silver); /* Silver color */
+    margin-bottom: 1rem; /* Space below title */
+    letter-spacing: 1px; /* Add letter spacing */
+}
+
+/* Feature card description */
+.feature-card p {
+    color: var(--text-secondary); /* Light gray color */
+    line-height: 1.6; /* Comfortable line height */
+    font-size: 1rem; /* Standard font size */
+}
+
+/* News preview section */
+.news-preview {
+    padding: 80px 0; /* Large vertical padding */
+    background-color: var(--bg-dark); /* Very dark background */
+}
+
+/* index.css */
+.news-preview-article {
+  background: #1a2323;
+  border-radius: 8px;
+  margin: 0.7em 0;
+  padding: 1em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+.news-preview-title {
+  font-weight: bold;
+  color: #7fd7a7;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.news-preview-title:hover {
+  text-decoration: underline;
+}
+
+.news-preview-date {
+  font-size: 0.9em;
+  color: #a0cfcf;
+  margin-bottom: 0.3em;
+}
+
+.news-preview-summary {
+  font-size: 1em;
+  color: #e0f7e9;
+}
+
+/* News cards container */
+.news-cards {
+    display: grid; /* Use CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid columns */
+    gap: 25px; /* Space between cards */
+    margin-top: 2rem; /* Space above cards */
+}
+
+/* Individual news card */
+.news-card {
+    background: linear-gradient(135deg, var(--primary-gray) 0%, var(--secondary-gray) 100%); /* Gradient background */
+    padding: 25px; /* Internal padding */
+    border-radius: var(--border-radius); /* Rounded corners */
+    border: 1px solid var(--light-gray); /* Subtle border */
+    transition: var(--transition); /* Smooth transition */
+    position: relative; /* For pseudo-element effects */
+    overflow: hidden; /* Hide overflow for effects */
+}
+
+/* News card hover effect */
+.news-card:hover {
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    border-color: var(--accent-red); /* Red border on hover */
+}
+
+/* News date styling */
+.news-date {
+    color: var(--accent-red); /* Red color */
+    font-size: 0.9rem; /* Smaller font size */
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 0.5rem; /* Space below date */
+    text-transform: uppercase; /* Make uppercase */
+    letter-spacing: 1px; /* Add letter spacing */
+}
+
+/* News card title */
+.news-card h4 {
+    font-family: var(--font-heading); /* Use heading font */
+    font-size: 1.3rem; /* Medium font size */
+    color: var(--silver); /* Silver color */
+    margin-bottom: 0.8rem; /* Space below title */
+    letter-spacing: 1px; /* Add letter spacing */
+}
+
+/* News card description */
+.news-card p {
+    color: var(--text-secondary); /* Light gray color */
+    line-height: 1.5; /* Comfortable line height */
+    margin-bottom: 1rem; /* Space below description */
+}
+
+/* News card link */
+.news-link {
+    color: var(--accent-red); /* Red color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600; /* Semi-bold */
+    font-size: 0.9rem; /* Smaller font size */
+    text-transform: uppercase; /* Make uppercase */
+    letter-spacing: 1px; /* Add letter spacing */
+    transition: var(--transition); /* Smooth transition */
+}
+
+/* News link hover effect */
+.news-link:hover {
+    color: #c82333; /* Darker red on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* ----------------------------------------------------------- */
+/*  Faded trainer + Pokémon slideshow that sits behind content */
+/* ----------------------------------------------------------- */
+
+/* Wrapper that fills the whole hero area */
+.hero-slideshow {
+    position: absolute;        /*  pulled out of normal flow                */
+    inset: 0;                  /*  shorthand for top/right/bottom/left: 0   */
+    display: flex;             /*  lets us centre the two images together   */
+    align-items: center;       /*  vertical centring within the hero        */
+    justify-content: center;   /*  horizontal centring                      */
+    pointer-events: none;      /*  clicks go “through” the slideshow        */
+    z-index: 2;               /*  Behind embers (=auto) and hero-bg (-1)   */
+    opacity: 0.22;             /*  subtle / “faded” look                    */
+}
+
+/* All slideshow images share these properties */
+.hero-slideshow img {
+    position: absolute;        /*  allows custom placement with transforms  */
+    max-width: none;           /*  we’ll set explicit width via % later     */
+    user-select: none;         /*  no accidental text/icon drag highlight   */
+    transition: opacity 0.2s ease; /* smooth fade in / out                    */
+}
+
+/* Trainer sits slightly left of centre */
+.trainer-image {
+    width: 20vw; /* smaller, responsive to viewport */
+    min-width: 120px;
+    max-width: 240px;
+    left: 13vw; /* push left */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Pokémon sits to the right */
+.pokemon-image {
+    width: 18vw; /* smaller, responsive */
+    min-width: 70px;
+    max-width: 140px;
+    right: 13vw; /* push right */
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* “Visible” class is toggled by JS to fade items in */
+.hero-slideshow img.visible {
+    opacity: 1;               /*  fully shown                              */
+}
+
+/* Hidden state – default when the page first loads */
+.hero-slideshow img:not(.visible) {
+    opacity: 0;               /*  completely transparent                   */
+}
+
+
+
+
+/* RESPONSIVE DESIGN FOR INDEX PAGE */
+/* Tablet styles */
+@media (max-width: 768px) {
+    /* Adjust hero title size */
+    .hero-title {
+        font-size: 3rem; /* Smaller font size */
+        letter-spacing: 2px; /* Reduce letter spacing */
+    }
+    
+    /* Adjust hero subtitle size */
+    .hero-subtitle {
+        font-size: 1.1rem; /* Smaller font size */
+    }
+    
+    /* Stack hero buttons on mobile */
+    .hero-buttons {
+        flex-direction: column; /* Stack vertically */
+        align-items: center; /* Center align */
+    }
+    
+    /* Adjust hero buttons width */
+    .hero-buttons .btn {
+        width: 100%; /* Full width */
+        max-width: 300px; /* Maximum width */
+    }
+    
+    /* Reduce section padding */
+    .features,
+    .news-preview {
+        padding: 60px 0; /* Smaller vertical padding */
+    }
+    
+    /* Adjust features grid */
+    .features-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px; /* Reduce gap */
+    }
+    
+    /* Adjust news cards grid */
+    .news-cards {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px; /* Reduce gap */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    /* Further reduce hero title size */
+    .hero-title {
+        font-size: 2.5rem; /* Even smaller font size */
+        letter-spacing: 1px; /* Further reduce letter spacing */
+    }
+    
+    /* Adjust hero height for mobile */
+    .hero {
+        min-height: 60vh; /* Smaller height */
+    }
+    
+    /* Reduce feature card padding */
+    .feature-card {
+        padding: 20px; /* Smaller padding */
+    }
+    
+    /* Reduce news card padding */
+    .news-card {
+        padding: 20px; /* Smaller padding */
+    }
+    
+    /* Further reduce section padding */
+    .features,
+    .news-preview {
+        padding: 40px 0; /* Even smaller vertical padding */
+    }
+}
+
+
+@media (max-width: 600px) {
+    .trainer-image { width: 28vw; left: 5vw; }
+    .pokemon-image { width: 16vw; right: 5vw; }
+}

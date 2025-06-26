@@ -1,0 +1,268 @@
+/* news.css */
+/* Styles for the news page and articles */
+
+/* Page header styling */
+.page-header {
+    /* Change background to a dark grey */
+    background: linear-gradient(135deg, #333 0%, #444 100%); /* Darker grey gradient */
+    padding: 3rem 0 2rem;
+    text-align: center;
+    border-bottom: 2px solid #dc3545; /* Keep the green accent or change to red */
+}
+
+.page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    /* Change to white */
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    /* Change to a lighter grey or off-white */
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* News section container */
+.news-section {
+    padding: 2rem 0;
+    min-height: 60vh;
+}
+
+.news-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Loading message styling */
+.loading-message {
+    text-align: center;
+    padding: 2rem;
+    /* Change to a lighter grey */
+    color: #ccc;
+    font-style: italic;
+}
+
+/* Individual news article styling */
+.news-article {
+    /* Change background to a dark grey */
+    background: linear-gradient(135deg, #444 0%, #333 100%); /* Darker grey gradient */
+    border-radius: 12px;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: 1px solid #555; /* Darker border */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-article:hover {
+    /* Keep the green accent or change to red */
+    box-shadow: 0 6px 20px rgba(127, 215, 167, 0.1);
+    border-color: #dc3545;
+    transform: translateY(-2px);
+}
+
+/* Article title styling */
+.news-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    /* Change to white */
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Article date styling */
+.news-date {
+    font-size: 0.9rem;
+    /* Change to red or a lighter grey */
+    color: #dc3545; /* Red */
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Article summary styling */
+.news-summary {
+    font-size: 1.05rem;
+    /* Change to a lighter grey or off-white */
+    color: #eee;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Expandable content container */
+.news-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Change to a lighter grey */
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* When article is expanded */
+.news-article.expanded .news-content {
+    max-height: 2000px; /* Large enough for longest articles */
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #555; /* Darker border */
+}
+
+/* Content styling within articles */
+.news-content h4 {
+    /* Change to red or a lighter grey */
+    color: #dc3545; /* Red */
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.5rem 0;
+    letter-spacing: 0.5px;
+}
+
+.news-content ul {
+    margin: 0.5rem 0 1rem 1rem;
+    padding-left: 0;
+}
+
+.news-content li {
+    margin-bottom: 0.5rem;
+    list-style-type: none;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.news-content li:before {
+    /* Change to red */
+    content: "▶";
+    color: #dc3545; /* Red */
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+
+.news-content ol {
+    margin: 0.5rem 0 1rem 1rem;
+    padding-left: 1rem;
+}
+
+.news-content ol li {
+    padding-left: 0.5rem;
+}
+
+.news-content ol li:before {
+    display: none;
+}
+
+.news-content a {
+    /* Change to red or a lighter grey */
+    color: #dc3545; /* Red */
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.news-content a:hover {
+    border-bottom-color: #dc3545; /* Red */
+}
+
+.news-content strong {
+    /* Change to white */
+    color: #fff;
+    font-weight: 600;
+}
+
+.news-content em {
+    /* Change to a lighter grey */
+    color: #ccc;
+    font-style: italic;
+}
+
+/* Expand/collapse toggle button */
+.expand-toggle {
+    display: inline-block;
+    /* Change to red or a lighter grey */
+    color: #dc3545; /* Red */
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+.expand-toggle:hover {
+    color: #ff776b; /* Lighter red */
+}
+
+.expand-toggle:after {
+    content: "▼";
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s;
+    font-size: 0.8rem;
+}
+
+.news-article.expanded .expand-toggle:after {
+    transform: rotate(180deg);
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 2rem 0 1.5rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .news-article {
+        margin: 1.5rem 0;
+        padding: 1.2rem;
+    }
+    
+    .news-title {
+        font-size: 1.3rem;
+    }
+    
+    .news-list {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Animation for when articles load */
+.news-article {
+    animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

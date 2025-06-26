@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character encoding and viewport for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encounter Tracker - Terra Emerald</title>
+
+    <!-- Google Fonts: Bebas Neue for headers, Manrope for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for bar graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Main and page-specific CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/encounter-tracker.css">
+</head>
+<body>
+    <!-- Sticky header with logo and navigation (same as index) -->
+    <header class="header">
+        <div class="header-brand">
+            <!-- Main site logo/title -->
+            <a href="index.html" class="logo-link">
+                <h1 class="logo">Terra Emerald</h1>
+            </a>
+            <!-- Tagline, themed for Type: Null -->
+            <span class="tagline">Null Protocol Activated</span>
+        </div>
+        <!-- Navigation bar -->
+        <nav class="nav">
+            <!-- Hamburger menu for mobile -->
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Navigation links to all main pages -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="patch-applier.html" class="nav-link">Patch</a></li>
+                <li><a href="pokedex.html" class="nav-link">Pokédex</a></li>
+                <li><a href="encounter-tracker.html" class="nav-link active">Tracker</a></li>
+                <li><a href="trainers.html" class="nav-link">Trainer Docs</a></li>
+                <li><a href="calculator.html" class="nav-link">Damage Calc</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <!-- Page title section -->
+        <section class="tracker-header">
+            <div class="container">
+                <h2 class="section-title">Encounter & KO Tracker</h2>
+                <p class="tracker-subtitle">Track your encounters and battle victories across Hoenn</p>
+            </div>
+        </section>
+
+        <!-- KO Statistics Bar Chart Section -->
+        <section class="ko-stats-section" id="koStatsSection" style="display: none;">
+            <div class="container">
+                <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+                <button id="toggleGraphBtn" class="btn btn-secondary">Hide Graph</button>
+                </div>
+                <h3 class="stats-title">KO Statistics</h3>
+                <div class="chart-container">
+                <canvas id="koChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Encounter tracking columns -->
+        <section class="encounter-tracker-section">
+            <div class="container">
+                <div id="totalKOTracker" class="total-ko-tracker" style="text-align: center; font-weight: bold; margin-bottom: 24px;">
+                    Total KOs: 0
+                </div>
+                <div class="encounter-columns" id="encounterColumns">
+                    <!-- JS will populate this with encounter rows -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Export section -->
+        <section class="export-section">
+            <div class="container">
+                <div class="export-controls">
+                    <button id="exportToSheets" class="btn btn-primary">Export to Google Sheets</button>
+                    <button id="exportToFile" class="btn btn-secondary">Download as JSON</button>
+                    <button id="clearAllData" class="btn btn-danger">Clear All Data</button>
+                </div>
+                <div class="export-status" id="exportStatus"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky footer (same as index) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Project info -->
+                <div class="footer-section">
+                    <h4>Terra Emerald</h4>
+                    <p>A fan-made Pokémon ROM hack featuring Type: Null, Silvally, and synthetic evolution mechanics.</p>
+                </div>
+                <!-- Quick links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="patch-applier.html">Download</a></li>
+                        <li><a href="encounter-tracker.html">Tracker</a></li>
+                        <li><a href="pokedex.html">Pokédex</a></li>
+                        <li><a href="news.html">News</a></li>
+                    </ul>
+                </div>
+                <!-- Community links -->
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" target="_blank">Discord</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                        <li><a href="#" target="_blank">Reddit</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Terra Emerald Team. Pokémon is © Nintendo/Game Freak/The Pokémon Company. This is a non-commercial fan project. Website maintained by Brian Cordry.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main and page-specific JS -->
+    <script src="../js/main.js"></script>
+    <script src="../js/encounter-tracker.js"></script>
+</body>
+</html>

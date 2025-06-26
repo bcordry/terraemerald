@@ -1,0 +1,120 @@
+/* faq.css - Styles specific to the FAQ page */
+
+/* Container for the FAQ section */
+.faq-section {
+  /* Add vertical spacing above and below the FAQ section */
+  padding: 2rem 0;
+  /* Use a subtle background color to distinguish the FAQ area */
+  background: var(--primary-gray);
+}
+
+/* Main FAQ list container */
+.faq-list {
+  /* Limit the width for readability and center it */
+  max-width: 700px;
+  margin: 0 auto;
+  /* Add some spacing between FAQ items */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Each FAQ item (question + answer) */
+.faq-item {
+  /* Add a border and rounded corners for separation */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  /* Add a subtle box shadow for depth */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+/* Highlight FAQ item on hover */
+.faq-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+/* FAQ question button */
+.faq-question {
+  /* Make the button fill the width of the container */
+  width: 100%;
+  /* Remove default button styles */
+  background: none;
+  border: none;
+  outline: none;
+  /* Use site font and size */
+  font-family: 'Bebas Neue', 'Manrope', Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: left;
+  /* Add padding for clickable area */
+  padding: 1.2rem 1.5rem;
+  /* Cursor pointer for interactivity */
+  cursor: pointer;
+  /* Add a transition for background color */
+  transition: background 0.2s;
+  /* Slightly darker text */
+  color: #222;
+  /* Add a caret icon using a pseudo-element */
+  position: relative;
+}
+
+.faq-question::after {
+  /* Add a down arrow (caret) to the right of the question */
+  content: '▼';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #888;
+  transition: transform 0.2s;
+}
+
+/* When the FAQ item is open, rotate the caret */
+.faq-item.open .faq-question::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+/* FAQ answer (hidden by default) */
+.faq-answer {
+  /* Hide the answer by default */
+  display: none;
+  /* Add padding for readability */
+  padding: 0 1.5rem 1.2rem 1.5rem;
+  /* Use a slightly lighter font */
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  /* Animate the appearance */
+  animation: fadeIn 0.3s;
+}
+
+/* Show the answer when the item is open */
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+/* Simple fade-in animation for answers */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive: reduce padding on small screens */
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 1.5rem 0;
+  }
+  .faq-list {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  .faq-question, .faq-answer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

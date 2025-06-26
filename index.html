@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character encoding and viewport for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra Emerald - A Pokémon ROM Hack</title>
+
+    <!-- Google Fonts: Bebas Neue for headers, Manrope for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <!-- Main and page-specific CSS (update paths as per your structure) -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <!-- Sticky header with logo and navigation -->
+    <header class="header">
+        <div class="header-brand">
+            <!-- Main site logo/title -->
+            <a href="index.html" class="logo-link">
+                <h1 class="logo">Terra Emerald</h1>
+            </a>
+            <!-- Tagline, themed for Type: Null -->
+            <span class="tagline">Null Protocol Activated</span>
+        </div>
+        <!-- Navigation bar -->
+        <nav class="nav">
+            <!-- Hamburger menu for mobile -->
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Navigation links to all main pages -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="patch-applier.html" class="nav-link">Patch</a></li>
+                <li><a href="pokedex.html" class="nav-link">Pokédex</a></li>
+                <li><a href="encounter-tracker.html" class="nav-link">Tracker</a></li>
+                <li><a href="trainers.html" class="nav-link">Trainer Docs</a></li>
+                <li><a href="calculator.html" class="nav-link">Damage Calc</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <!-- Hero section: big intro banner -->
+        <section class="hero">
+            <!-- Hero content container with title, subtitle, and buttons -->
+            <div class="hero-content">
+                <h2 class="hero-title">Welcome to Terra Emerald</h2>
+                <p class="hero-subtitle">Experience the power of synthetic evolution in this enhanced Pokémon adventure</p>
+                <div class="hero-buttons">
+                    <a href="patch-applier.html" class="btn btn-primary">Download & Play</a>
+                    <a href="faq.html" class="btn btn-secondary">New Features</a>
+                </div>
+            </div>
+            
+            <!-- Decorative background for hero section -->
+            <div class="hero-bg"></div>
+            
+            <!-- BACKGROUND SLIDESHOW - Faded trainer and pokemon images -->
+            <!-- This container holds the rotating trainer and pokemon images that appear behind all other content -->
+            <div class="hero-slideshow" aria-hidden="true">
+                <!-- Trainer portrait that will fade in/out every 6 seconds -->
+                <!-- Initial placeholder image - JavaScript will handle the rotation -->
+                <img class="trainer-image"
+                     src="../images/trainers/trainer1.png"
+                     alt=""
+                />
+                
+                <!-- Pokemon that will change independently every 2-3 seconds -->
+                <!-- Shows a random pokemon from the current trainer's team -->
+                <img class="pokemon-image"
+                     src="../images/pokemon/pokemon1-1.png"
+                     alt=""
+                />
+            </div>
+            <!-- END BACKGROUND SLIDESHOW -->
+        </section>
+
+        <!-- Features section: highlights of the game -->
+        <section class="features">
+            <div class="container">
+                <h3 class="section-title">Game Features</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧬</div>
+                        <h4>Evolved Combat</h4>
+                        <p>Hundreds of personally crafted enemy trainer teams with custom AI. The next evolution of combat.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Type Shifting</h4>
+                        <p>Updates to Pokemon typing, statistics, and abilities for a fresh experience. Embrace adaptation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h4>Elite Challenge</h4>
+                        <p>The hardest ROM Hack experience yet. Difficulty upgraded and improved.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h4>Expanded World</h4>
+                        <p>Explore new areas and discover hidden secrets throughout Hoenn.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h4>Expanded World</h4>
+                        <p>Explore new areas and discover hidden secrets throughout Hoenn.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h4>Expanded World</h4>
+                        <p>Explore new areas and discover hidden secrets throughout Hoenn.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News/updates preview section -->
+        <section class="news-preview">
+            <div class="container">
+                <h3 class="section-title">Latest Updates</h3>
+                <div class="news-cards">
+                    <article class="news-card">
+                        <div class="news-date">2025-12-15</div>
+                        <h4>Version 1.0 Released</h4>
+                        <p>Release the dangers of Type: Null into your emulator of choice!</p>
+                        <a href="news.html" class="news-link">Read More</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-date">2025-07-01</div>
+                        <h4>Demo Released</h4>
+                        <p>Play through the first gym and learn the new AI.</p>
+                        <a href="news.html" class="news-link">Read More</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-date">2024-11-20</div>
+                        <h4>Game Announced!</h4>
+                        <p>We're happy to announce the development of Terra Emerald, the next evolution in Pokémon ROM hacks!</p>
+                        <a href="news.html" class="news-link">Read More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky footer with site info and links -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Project info -->
+                <div class="footer-section">
+                    <h4>Terra Emerald</h4>
+                    <p>A fan-made Pokémon ROM hack featuring Type: Null, Silvally, and synthetic evolution mechanics.</p>
+                </div>
+                <!-- Quick links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="patch-applier.html">Download</a></li>
+                        <li><a href="encounter-tracker.html">Encounter Tracker</a></li>
+                        <li><a href="pokedex.html">Pokédex</a></li>
+                        <li><a href="news.html">News</a></li>
+                    </ul>
+                </div>
+                <!-- Community links -->
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" target="_blank">Discord</a></li>
+                        <li><a href="#" target="_blank">Reddit</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Terra Emerald Team. Pokémon is © Nintendo/Game Freak/The Pokémon Company. This is a non-commercial fan project. Website maintained by Brian Cordry.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main and page-specific JS (update paths as per your structure) -->
+    <script src="../js/main.js"></script>
+    <script src="../js/news-data.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>
