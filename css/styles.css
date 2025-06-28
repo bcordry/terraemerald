@@ -301,7 +301,7 @@ body {
 
 /* RESPONSIVE DESIGN */
 /* Tablet styles */
-@media (max-width: 768px) {
+@media (max-width: 920px) {
     /* Hide desktop navigation menu */
     .nav-menu {
         display: none; /* Hidden by default on mobile */

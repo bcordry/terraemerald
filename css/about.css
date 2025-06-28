@@ -1,0 +1,404 @@
+/* ABOUT PAGE SPECIFIC STYLES */
+/* This file contains styles specific to the about page */
+
+/* About header section styling */
+.about-header {
+    padding: 60px 0 40px; /* Top padding, no bottom padding */
+    background: linear-gradient(135deg, var(--primary-gray) 0%, var(--secondary-gray) 100%); /* Gradient background matching site theme */
+    border-bottom: 2px solid var(--accent-red); /* Red accent border */
+}
+
+/* About description paragraph styling */
+.about-description {
+    font-size: 1.3rem; /* Larger font size for emphasis */
+    color: var(--text-secondary); /* Light gray text */
+    text-align: center; /* Center align text */
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto; /* Center the paragraph */
+    line-height: 1.7; /* Comfortable line height */
+    font-weight: 400; /* Normal font weight */
+}
+
+/* Features section */
+.features {
+    padding: 80px 0; /* Vertical padding for section */
+    background-color: var(--bg-dark); /* Dark background */
+}
+
+/* Features grid container */
+.features-grid {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Space between grid items */
+    margin-top: 50px; /* Space below section title */
+}
+
+/* CARD FLIP AND EXPANSION STYLES */
+.feature-card {
+    background: linear-gradient(135deg, var(--secondary-gray) 0%, var(--primary-gray) 100%); /* Gradient background */
+    padding: 20px 20px; /* Internal padding */
+    border-radius: var(--border-radius); /* Rounded corners */
+    text-align: center; /* Center align content */
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth expansion */
+    border: 1px solid transparent; /* Transparent border for hover effect */
+    position: relative; /* For pseudo-element positioning */
+    overflow: hidden; /* Hide overflow for effects */
+    perspective: 1000px; /* Enable 3D transforms */
+    cursor: pointer; /* Show it's clickable */
+    z-index: 1; /* Base z-index */
+    min-height: 250px; /* Ensure consistent height */
+}
+
+/* Feature card hover effect */
+.feature-card:hover {
+    transform: translateY(-10px); /* Lift card on hover */
+    border-color: var(--accent-red); /* Red border on hover */
+    box-shadow: 0 15px 40px rgba(220, 53, 69, 0.2); /* Red glow shadow */
+}
+
+/* Feature card subtle background animation on hover */
+.feature-card::before {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute; /* Position absolutely within card */
+    top: 0; /* Align to top */
+    left: -100%; /* Start off-screen to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.1), transparent); /* Subtle shine effect */
+    transition: left 0.6s ease; /* Smooth transition for shine animation */
+}
+
+/* Trigger shine effect on hover */
+.feature-card:hover::before {
+    left: 100%; /* Move shine across card */
+}
+
+/* EXPANDED CARD STYLES */
+.feature-card.expanded {
+    position: fixed !important; /* Take out of document flow */
+    top: 50% !important; /* Center vertically */
+    left: 50% !important; /* Center horizontally */
+    transform: translate(-50%, -50%) !important; /* Center and scale */
+    width: 80vw !important; /* 5x wider (roughly) */
+    height: 60vh !important; /* 2x taller (roughly) */
+    max-width: 1200px !important; /* Maximum width */
+    max-height: 600px !important; /* Maximum height */
+    z-index: 1000 !important; /* Bring to front */
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.8) !important; /* Dramatic shadow */
+    padding: 0 !important; /* Remove padding for expanded state */
+}
+
+.feature-card-inner {
+    position: relative; /* For 3D positioning */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    text-align: center; /* Center content */
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1); /* Flip animation */
+    transform-style: preserve-3d; /* Enable 3D transforms */
+}
+
+.feature-card.flipped .feature-card-inner {
+    transform: rotateY(180deg); /* Flip the card */
+}
+
+.feature-card-front,
+.feature-card-back {
+    position: absolute; /* Overlay front and back */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    backface-visibility: hidden; /* Hide back face during flip */
+    border-radius: var(--border-radius); /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+}
+
+.feature-card-front {
+    /* Front side styling */
+    background: linear-gradient(135deg, var(--secondary-gray) 0%, var(--primary-gray) 100%);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-card-back {
+    transform: rotateY(180deg); /* Start flipped */
+    background: var(--black); /* Dark background */
+    position: relative; /* For overlay positioning */
+}
+
+.feature-card-back img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover entire area */
+    object-position: center; /* Center the image */
+}
+
+.screenshot-overlay {
+    position: absolute; /* Overlay on image */
+    bottom: 0; /* Align to bottom */
+    left: 0; /* Align to left */
+    right: 0; /* Align to right */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)); /* Gradient overlay */
+    padding: 30px; /* Internal padding */
+    color: #ffffff; /* White text */
+}
+
+.screenshot-overlay h4 {
+    font-family: var(--font-heading); /* Heading font */
+    font-size: 2rem; /* Large font */
+    color: var(--silver); /* Silver color */
+    margin-bottom: 10px; /* Space below */
+    letter-spacing: 1px; /* Letter spacing */
+}
+
+.screenshot-overlay p {
+    font-size: 1.1rem; /* Slightly larger text */
+    line-height: 1.5; /* Comfortable line height */
+    margin-bottom: 20px; /* Space below */
+}
+
+.close-card {
+    position: absolute; /* Position absolutely */
+    top: 20px; /* From top */
+    right: 20px; /* From right */
+    background: rgba(220, 53, 69, 0.9); /* Red background */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    border-radius: 50%; /* Circular */
+    font-size: 1.5rem; /* Large font */
+    cursor: pointer; /* Pointer cursor */
+    transition: var(--transition); /* Smooth transition */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.close-card:hover {
+    background: var(--accent-red); /* Solid red on hover */
+    transform: scale(1.1); /* Slightly larger */
+}
+
+/* Feature icon styling */
+.feature-icon {
+    font-size: 3rem; /* Large icon size */
+    margin-bottom: 20px; /* Space below icon */
+    display: block; /* Block display for proper spacing */
+    transition: var(--transition); /* Smooth transition for animations */
+}
+
+/* Feature card title styling */
+.feature-card h4 {
+    font-family: var(--font-heading); /* Use heading font */
+    font-size: 1.8rem; /* Large font size */
+    color: var(--silver); /* Silver color */
+    margin-bottom: 15px; /* Space below title */
+    letter-spacing: 1px; /* Add letter spacing */
+    text-transform: uppercase; /* Make uppercase */
+}
+
+/* Feature card description styling */
+.feature-card p {
+    color: var(--text-secondary); /* Light gray text */
+    line-height: 1.6; /* Comfortable line height */
+    font-size: 1rem; /* Standard font size */
+    margin: 0; /* Remove default margin */
+}
+
+/* Backdrop for expanded cards */
+.card-backdrop {
+    position: fixed; /* Cover entire screen */
+    top: 0; /* From top */
+    left: 0; /* From left */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    z-index: 999; /* Behind expanded card */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.4s ease; /* Fade transition */
+    pointer-events: none; /* Don't block clicks initially */
+}
+
+.card-backdrop.active {
+    opacity: 1; /* Fade in */
+    pointer-events: all; /* Enable clicks */
+}
+
+/* About more section styling */
+.about-more {
+    padding: 60px 0; /* Vertical padding */
+    background: linear-gradient(135deg, var(--black) 0%, var(--primary-gray) 100%); /* Gradient background */
+    text-align: center; /* Center align content */
+}
+
+/* About more section paragraph styling */
+.about-more p {
+    font-size: 1.2rem; /* Slightly larger font */
+    color: var(--text-secondary); /* Light gray text */
+    max-width: 600px; /* Limit width for readability */
+    margin: 0 auto; /* Center the paragraph */
+    line-height: 1.6; /* Comfortable line height */
+}
+
+/* Links within about more section */
+.about-more a {
+    color: var(--accent-red); /* Red color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600; /* Semi-bold weight */
+    transition: var(--transition); /* Smooth transition */
+}
+
+/* Link hover effect */
+.about-more a:hover {
+    color: var(--silver); /* Change to silver on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* RESPONSIVE DESIGN FOR ABOUT PAGE */
+/* Tablet styles */
+@media (max-width: 768px) {
+    .about-header {
+        padding: 40px 0 30px;
+    }
+    
+    .about-description {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .features {
+        padding: 60px 0;
+    }
+    
+    .features-grid {
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .feature-card {
+        padding: 30px 20px;
+        min-height: 220px;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+    
+    .feature-card h4 {
+        font-size: 1.5rem;
+    }
+
+    .feature-card.expanded {
+        width: 95vw !important;
+        height: 70vh !important;
+    }
+    
+    .screenshot-overlay h4 {
+        font-size: 1.5rem;
+    }
+    
+    .screenshot-overlay p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .about-header {
+        padding: 30px 0 20px;
+    }
+    
+    .about-description {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .feature-card {
+        padding: 25px 15px;
+        min-height: 200px;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+    }
+    
+    .about-more {
+        padding: 40px 0;
+    }
+    
+    .about-more p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+}
+
+/* Ripple animation for click effects */
+@keyframes ripple-animation {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Scroll animation classes */
+.animate-in {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.feature-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Focus styles for better accessibility */
+.feature-card:focus {
+    outline: 3px solid var(--accent-red);
+    outline-offset: 2px;
+}
+
+/* Skip link styles */
+.skip-link:focus {
+    top: 6px !important;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .feature-card,
+    .feature-icon,
+    .feature-card::before {
+        transition: none;
+    }
+    
+    .feature-card:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .feature-card {
+        border: 2px solid var(--silver);
+    }
+    
+    .feature-card:hover {
+        border-color: #ffffff;
+    }
+}
