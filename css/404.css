@@ -3,7 +3,7 @@
 /* Set the background image to cover the whole viewport */
 body {
     min-height: 100vh; /* Ensure body fills the viewport */
-    background: url('../assets/images/backgroungs/background1.png') center center no-repeat;
+    background: url('assets/images/backgroungs/background1.png') center center no-repeat;
     background-size: cover; /* Make sure the image covers the whole background */
     display: flex;
     align-items: center;
